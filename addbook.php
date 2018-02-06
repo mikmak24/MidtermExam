@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<form action="" method="post">
+	<form action="insert.php" method="post">
 	<h1>Library Database</h1>
 	<fieldset>
 		<legend>Book Information</legend>
