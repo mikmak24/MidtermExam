@@ -1,5 +1,5 @@
 <?php
-    
+ include 'include/dbconnection.php';   
 ?>
 <html>
 
@@ -32,8 +32,28 @@
             </thead>
             <tbody>
                 <?php
-                
-                ?>
+          
+           require 'include/dbconnection.php';
+         
+           $sql = "Select * FROM demo ORDER BY ID desc";
+           $result = mysqli_query($conn, $sql);
+         
+         
+         
+           while($row = mysqli_fetch_array($result)){?>
+               <tr>
+                <td><?php echo $row['Title'];?></td>
+                <td><?php echo $row['Pages'];?></td>
+                <td><?php echo $row['Author'];?></td>
+                <td><?php echo $row['publishedyear'];?></td>
+               </tr>
+               
+               
+               
+         <?php      
+           }
+         
+         ?>
             </tbody>
         </table>
 	</form>
@@ -45,5 +65,6 @@
 	</script>
 <?php 
     $dbconn->close();
+    ?>
 </body>
 </html>
