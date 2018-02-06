@@ -1,5 +1,5 @@
 <?php
- include 'include/dbconnection.php';   
+ include 'include/dbconnection.php';
 ?>
 <html>
 
@@ -17,6 +17,7 @@
 		<label>Pages:</label> <input type="number" min=1 name="pages" required/><br />
 		<label>Author:</label> <input type="text" name="author" required/><br />
 		<label>Published Year:</label> <input type="text" name="year" required/>
+        
         <div><br/></div>
     <input style="float:right" type="submit" value="Add Book" onClick="return submit_form();" name="submit"/>
     </fieldset>
@@ -31,12 +32,12 @@
                 </tr>
             </thead>
             <tbody>
-                <?php
+                 <?php
           
            require 'include/dbconnection.php';
          
            $sql = "Select * FROM demo ORDER BY ID desc";
-           $result = mysqli_query($conn, $sql);
+           $result = mysqli_query($dbconn, $sql);
          
          
          
